@@ -1,18 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
+using TMPro;
 
 public class Currency : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public TextMeshProUGUI _coinText;
+    private int _coinValue;
 
-    // Update is called once per frame
-    void Update()
+    public void SetMoney(int _amount)
     {
+        _coinValue += _amount;
         
+        _coinText.SetText(_coinValue.ToString());
     }
 }
