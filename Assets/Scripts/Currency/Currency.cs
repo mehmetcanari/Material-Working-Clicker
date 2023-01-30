@@ -1,19 +1,38 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class Currency : MonoBehaviour
 {
-    public TextMeshProUGUI _coinText;
-    private int _coinValue;
+    private int currency;
+    public TextMeshProUGUI currencyText;
 
-    public void SetMoney(int _amount)
+    private void Start()
     {
-        _coinValue += _amount;
-        
-        _coinText.SetText(_coinValue.ToString());
+        currency = PlayerPrefs.GetInt("Currency", 0);
+
+        UpdateCurrencyDisplay();
+    }
+
+    public void AddCurrency(int amount)
+    {
+        currency += amount;
+        PlayerPrefs.SetInt("Currency", currency);
+        UpdateCurrencyDisplay();
+    }
+
+    public int GetCurrency()
+    {
+        return currency;
+    }
+
+    private void UpdateCurrencyDisplay()
+    {
+        currencyText.text = currency.ToString();
     }
 }
+
+
+
+
+

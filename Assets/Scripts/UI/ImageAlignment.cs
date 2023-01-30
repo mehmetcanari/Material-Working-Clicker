@@ -15,10 +15,10 @@ public class ImageAlignment : MonoBehaviour
 
     private void Update()
     {
-        LookToCamera();
+        ForceLookCamera();
     }
 
-    private void LookToCamera()
+    private void ForceLookCamera()
     {
         transform.LookAt(_mainCamera.transform);
     }

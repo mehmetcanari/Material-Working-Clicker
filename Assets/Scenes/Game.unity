@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1933997366}
-  m_IndirectSpecularColor: {r: -0.0026652564, g: 0.09695277, b: 0.99999905, a: 1}
+  m_IndirectSpecularColor: {r: -0.0026652345, g: 0.09695278, b: 0.99999905, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3733,7 +3733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baa04d7b26c0e4e978a04d1cd5af73ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coinText: {fileID: 228320566}
+  currencyText: {fileID: 228320566}
 --- !u!1 &1450731047
 GameObject:
   m_ObjectHideFlags: 0
