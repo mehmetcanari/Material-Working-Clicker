@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
 using Dreamteck.Splines;
@@ -34,6 +35,12 @@ public class RawProduce : MonoBehaviour
     public void ProduceStone()
     {
         var spawnedStone = Instantiate(_rawMaterial, ConveyorStartPosition(), Quaternion.identity);
+
+        Vector3 defaultStoneScale = spawnedStone.transform.localScale;
+        
+        spawnedStone.transform.localScale = Vector3.zero;
+
+        spawnedStone.transform.DOScale(defaultStoneScale, 0.5f);
 
         spawnedStone.GetComponent<SplineFollower>().spline = _mineConveyorPath;
     }

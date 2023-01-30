@@ -8,6 +8,8 @@ using UnityEngine;
 
 public class RawTask : MonoBehaviour
 {
+    public MaterialType _Material;
+    
     private void OnEnable()
     {
         SetConveyorSpeed(3);
@@ -34,8 +36,30 @@ public class RawTask : MonoBehaviour
     {
         if (CalculatedPosition() >= 1f)
         {
-            //SEND PHASE 2 DATA
             Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Forge"))
+        {
+            gameObject.GetComponent<Collider>().enabled = false;
+
+            switch (_Material)
+            {
+                case MaterialType.V1:
+                    other.GetComponent<ITypeDefine>().ProduceV1Ingot();
+                    break;
+                
+                case MaterialType.V2:
+                    other.GetComponent<ITypeDefine>().ProduceV2Ingot();
+                    break;
+                
+                case MaterialType.V3:
+                    other.GetComponent<ITypeDefine>().ProduceV3Ingot();
+                    break;
+            }
         }
     }
 
@@ -48,4 +72,11 @@ public class RawTask : MonoBehaviour
                 break;
         }
     }
+}
+
+public enum MaterialType
+{
+    V1,
+    V2,
+    V3
 }
