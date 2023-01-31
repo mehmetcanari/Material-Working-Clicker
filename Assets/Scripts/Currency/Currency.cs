@@ -25,14 +25,6 @@ public class Currency : MonoBehaviour
         TweenCurrencyObject();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            AddCurrency(20);
-        }
-    }
-
     public int GetCurrency()
     {
         return currency;
