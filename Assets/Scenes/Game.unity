@@ -867,22 +867,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pickaxe: {fileID: 0}
   _second: 0.75
-  TaskCaller:
+  HitCalling:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 310639811}
-        m_TargetAssemblyTypeName: Mining, Assembly-CSharp
-        m_MethodName: Hit
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _easing: 8
+      m_Calls: []
+  _easing:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &343946292
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3181,22 +3174,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pickaxe: {fileID: 0}
   _second: 0.5
-  TaskCaller:
+  HitCalling:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1607150764}
-        m_TargetAssemblyTypeName: Mining, Assembly-CSharp
-        m_MethodName: Hit
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _easing: 8
+      m_Calls: []
+  _easing:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1696045563
 GameObject:
   m_ObjectHideFlags: 0
@@ -4476,12 +4462,80 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 652807203341996616, guid: 5a47da20304cb40619763cf5f809db57, type: 3}
+      propertyPath: _second
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 652807203341996616, guid: 5a47da20304cb40619763cf5f809db57, type: 3}
+      propertyPath: _rawMaterial
+      value: 
+      objectReference: {fileID: 7235812103769911085, guid: 26ec6df9a54724a43b2bb5ae5f3476ee, type: 3}
+    - target: {fileID: 652807203341996616, guid: 5a47da20304cb40619763cf5f809db57, type: 3}
+      propertyPath: _mineConveyorPath
+      value: 
+      objectReference: {fileID: 1360893726}
+    - target: {fileID: 652807203341996616, guid: 5a47da20304cb40619763cf5f809db57, type: 3}
+      propertyPath: _easing.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 652807203341996616, guid: 5a47da20304cb40619763cf5f809db57, type: 3}
+      propertyPath: _easing.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 652807203341996616, guid: 5a47da20304cb40619763cf5f809db57, type: 3}
+      propertyPath: _easing.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 652807203341996616, guid: 5a47da20304cb40619763cf5f809db57, type: 3}
+      propertyPath: _easing.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 652807203341996616, guid: 5a47da20304cb40619763cf5f809db57, type: 3}
+      propertyPath: _easing.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 652807203341996616, guid: 5a47da20304cb40619763cf5f809db57, type: 3}
+      propertyPath: _easing.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 652807203341996616, guid: 5a47da20304cb40619763cf5f809db57, type: 3}
+      propertyPath: _easing.m_Curve.Array.data[1].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 652807203341996616, guid: 5a47da20304cb40619763cf5f809db57, type: 3}
+      propertyPath: HitCalling.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 652807203341996616, guid: 5a47da20304cb40619763cf5f809db57, type: 3}
+      propertyPath: HitCalling.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 652807203341996616, guid: 5a47da20304cb40619763cf5f809db57, type: 3}
+      propertyPath: HitCalling.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 543450652118006550}
+    - target: {fileID: 652807203341996616, guid: 5a47da20304cb40619763cf5f809db57, type: 3}
       propertyPath: TaskCaller.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 543450652118006550}
     - target: {fileID: 652807203341996616, guid: 5a47da20304cb40619763cf5f809db57, type: 3}
+      propertyPath: HitCalling.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 652807203341996616, guid: 5a47da20304cb40619763cf5f809db57, type: 3}
+      propertyPath: HitCalling.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Hit
+      objectReference: {fileID: 0}
+    - target: {fileID: 652807203341996616, guid: 5a47da20304cb40619763cf5f809db57, type: 3}
       propertyPath: TaskCaller.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Hit
+      objectReference: {fileID: 0}
+    - target: {fileID: 652807203341996616, guid: 5a47da20304cb40619763cf5f809db57, type: 3}
+      propertyPath: HitCalling.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Mining, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 652807203341996616, guid: 5a47da20304cb40619763cf5f809db57, type: 3}
+      propertyPath: HitCalling.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1046389600820561441, guid: 5a47da20304cb40619763cf5f809db57, type: 3}
       propertyPath: m_RootOrder
