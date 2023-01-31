@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8593058677461443121}
   - component: {fileID: 5810868509449492219}
   - component: {fileID: 6048802198382926108}
+  - component: {fileID: 6931384512166997409}
   m_Layer: 0
   m_Name: Sword_V1
   m_TagString: Untagged
@@ -218,3 +219,16 @@ MonoBehaviour:
   _unityOnBeginningReached:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6931384512166997409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5450664444840523566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c01f44cca28f9d429055c989811d563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _forgedType: 0

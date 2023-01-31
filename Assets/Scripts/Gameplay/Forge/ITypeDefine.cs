@@ -4,9 +4,9 @@ using UnityEngine;
 
 public interface ITypeDefine
 {
-    void ProduceV1Ingot();
+    void V1ProduceTask();
 
-    void ProduceV2Ingot();
+    void V2ProduceTask();
 
-    void ProduceV3Ingot();
+    void V3ProduceTask();
 }

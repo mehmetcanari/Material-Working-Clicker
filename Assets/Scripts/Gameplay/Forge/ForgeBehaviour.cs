@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using Dreamteck.Splines;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.Serialization;
 
 public class ForgeBehaviour : MonoBehaviour, ITypeDefine
 {
     public SplineComputer _processingUnityPath;
-    public ProductData _productData;
+    [FormerlySerializedAs("_productData")] public IngotData ingotData;
 
     public Vector3 ConveyorStartPosition()
     {
@@ -43,18 +44,18 @@ public class ForgeBehaviour : MonoBehaviour, ITypeDefine
         spawnedIngot.GetComponent<SplineFollower>().spline = _processingUnityPath;
     }
     
-    public void ProduceV1Ingot()
+    public void V1ProduceTask()
     {
-        ProduceIngot(_productData._forgedProductV1);
+        ProduceIngot(ingotData._forgedProductV1);
     }
 
-    public void ProduceV2Ingot()
+    public void V2ProduceTask()
     {
-        ProduceIngot(_productData._forgedProductV2);
+        ProduceIngot(ingotData._forgedProductV2);
     }
 
-    public void ProduceV3Ingot()
+    public void V3ProduceTask()
     {
-        ProduceIngot(_productData._forgedProductV3);
+        ProduceIngot(ingotData._forgedProductV3);
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "Data", menuName = "Product Store", order = 1)]
-public class ProductData : ScriptableObject
+public class IngotData : ScriptableObject
 {
     public GameObject _forgedProductV1;
     public GameObject _forgedProductV2;

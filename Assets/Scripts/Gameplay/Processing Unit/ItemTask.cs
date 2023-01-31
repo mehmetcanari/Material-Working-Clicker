@@ -1,11 +1,9 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using Dreamteck.Splines;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-public class ForgedTask : MonoBehaviour
+public class ItemTask : MonoBehaviour
 {
     public ForgedType _forgedType;
     
@@ -39,29 +37,6 @@ public class ForgedTask : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.TryGetComponent(out ProcessingBehaviour _processingBehaviour))
-        {
-            gameObject.GetComponent<Collider>().enabled = false;
-
-            switch (_forgedType)
-            {
-                case ForgedType.V1:
-                    _processingBehaviour.V1ProduceTask();
-                    break;
-                
-                case ForgedType.V2:
-                    _processingBehaviour.V2ProduceTask();
-                    break;
-                    
-                case ForgedType.V3:
-                    _processingBehaviour.V3ProduceTask();
-                    break;
-            }
-        }
-    }
-
     private void Update()
     {
         switch (StateManager.Instance._states)
@@ -73,7 +48,7 @@ public class ForgedTask : MonoBehaviour
     }
 }
 
-public enum ForgedType
+public enum ItemType
 {
     V1,
     V2,

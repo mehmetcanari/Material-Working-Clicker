@@ -42,22 +42,22 @@ public class RawTask : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Forge"))
+        if (other.TryGetComponent(out ForgeBehaviour _forgeBehaviour))
         {
             gameObject.GetComponent<Collider>().enabled = false;
 
             switch (_Material)
             {
                 case MaterialType.V1:
-                    other.GetComponent<ITypeDefine>().ProduceV1Ingot();
+                    _forgeBehaviour.V1ProduceTask();
                     break;
                 
                 case MaterialType.V2:
-                    other.GetComponent<ITypeDefine>().ProduceV2Ingot();
+                    _forgeBehaviour.V2ProduceTask();
                     break;
                 
                 case MaterialType.V3:
-                    other.GetComponent<ITypeDefine>().ProduceV3Ingot();
+                    _forgeBehaviour.V3ProduceTask();
                     break;
             }
         }
