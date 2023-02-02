@@ -30,7 +30,7 @@ public class MarketSelling : Sell, ISeller
     {
         _currency.AddCurrency(_amount);
         
-        TweenMarket(Vector3.one * 1.25f, transform);
+        TweenMarket(Vector3.one * 1.1f, transform);
     }
 
     protected override void TweenMarket(Vector3 _tweenValue, Transform _targetObject)

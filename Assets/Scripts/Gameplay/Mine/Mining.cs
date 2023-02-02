@@ -9,7 +9,7 @@ using UnityEngine.Serialization;
 
 public class Mining : ProduceDataset
 {
-    private GameObject _pickaxe;
+    [HideInInspector] public GameObject _pickaxe;
     [SerializeField] private float _second;
     public bool _hitAllow = true;
 

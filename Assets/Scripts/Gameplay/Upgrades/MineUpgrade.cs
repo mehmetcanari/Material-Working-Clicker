@@ -1,50 +1,48 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using DG.Tweening;
-using Dreamteck;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
-using Button = UnityEngine.UI.Button;
+using UnityEngine.UI;
 
-public class PickaxeUpgrade : Upgradables
+public class MineUpgrade : Upgradables
 {
-    public Mining _mining;
     public Currency _currency;
 
     public TextMeshProUGUI _upgradeText;
     public Button _upgradeButton;
     private int _upgradeCount = 0;
     public int _upgradeCost;
+    public List<GameObject> _mines;
 
     private void Start()
     {
         SetUpgradeValue(_upgradeText, _upgradeCost);
     }
 
-    public override void Pickaxe() { Buy(_currency); }
-    public override void Mine() { }
+
+    public override void Pickaxe() { }
+
+    public override void Mine() { Buy(_currency);}
+
     public override void Market() { }
-    
-    private void UpgradePickaxe()
+
+    private void UpgradeMine()
     {
-        DOTween.Rewind("Mining");
-        _mining.Second -= 0.25f;
-        _mining.HitCalling?.Invoke();
-        _mining._hitAllow = true;
         _upgradeCount++;
+        
+        _mines[_upgradeCount - 1].gameObject.SetActive(false);
+        _mines[_upgradeCount].gameObject.SetActive(true);
     }
-    
+
     private void Buy(Currency currency)
     {
         if (_currency.GetCurrency() >= _upgradeCost)
         {
-            CheckBuyCount(_upgradeCount, _upgradeButton, 3);
-            UpgradePickaxe();
+            CheckBuyCount(_upgradeCount, _upgradeButton, 2);
+            UpgradeMine();
             currency.DecreaseCurrency(_upgradeCost);
-            TweenUpgraded(new Vector3(4.5f, 4.5f, 4.5f), _mining._pickaxe.transform);
+            TweenUpgraded(new Vector3(2f, 2f, 2f), _mines[_upgradeCount].transform);
         }
     }
 }
-
