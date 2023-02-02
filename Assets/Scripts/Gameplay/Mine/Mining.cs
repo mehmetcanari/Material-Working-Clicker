@@ -11,8 +11,8 @@ public class Mining : ProduceDataset
 {
     private GameObject _pickaxe;
     [SerializeField] private float _second;
-    private bool _hitAllow = true;
-    
+    public bool _hitAllow = true;
+
     public UnityEvent HitCalling;
     public AnimationCurve _easing;
     private int hitCount;
@@ -29,7 +29,7 @@ public class Mining : ProduceDataset
         }
     }
 
-    public bool HitAllow
+    protected bool HitAllow
     {
         get
         {
@@ -64,7 +64,7 @@ public class Mining : ProduceDataset
     public void Hit()
     {
         if (!HitAllow) return;
-        _pickaxe.transform.DORotate(new Vector3(0, -45f, 0), Second).SetLoops(-1, LoopType.Yoyo).SetEase(_easing).OnStepComplete(
+        _pickaxe.transform.DORotate(new Vector3(0, -45f, 0), Second).SetLoops(-1, LoopType.Yoyo).SetEase(_easing).SetId("Mining").OnStepComplete(
             () =>
             {
                 hitCount++;

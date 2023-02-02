@@ -25,6 +25,14 @@ public class Currency : MonoBehaviour
         TweenCurrencyObject();
     }
 
+    public void DecreaseCurrency(int amount)
+    {
+        currency -= amount;
+        PlayerPrefs.SetInt("Currency", currency);
+        UpdateCurrencyDisplay();
+        TweenCurrencyObject();
+    }
+
     public int GetCurrency()
     {
         return currency;
