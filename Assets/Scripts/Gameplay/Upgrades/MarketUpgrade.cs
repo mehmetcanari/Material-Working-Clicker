@@ -24,10 +24,7 @@ public class MarketUpgrade : Upgradables
 
     public override void Mine() { }
 
-    public override void Market()
-    {
-        Buy(_currency);
-    }
+    public override void Market() { Buy(_currency); }
 
     private void Buy(Currency currency)
     {
