@@ -9,9 +9,10 @@ using UnityEngine.Serialization;
 
 public class Mining : ProduceDataset
 {
-    public GameObject _pickaxe;
+    private GameObject _pickaxe;
     [SerializeField] private float _second;
     private bool _hitAllow = true;
+    
     public UnityEvent HitCalling;
     public AnimationCurve _easing;
     private int hitCount;
@@ -69,7 +70,6 @@ public class Mining : ProduceDataset
                 hitCount++;
                 if (hitCount % 2 == 0)
                 {
-                    Debug.Log("Works");
                     CallHitTasks();
                 }
             });
@@ -80,8 +80,8 @@ public class Mining : ProduceDataset
     {
         if (CurrentMine.Instance._activeMine.TryGetComponent(out RawBehaviour _produce))
         {
-            ProduceTargetItem(_produce._rawMaterial, _produce._mineConveyorPath);
-            Tweening(new Vector3(2,2,2), CurrentMine.Instance._activeMine.transform);
+            ProduceTargetItem(_produce._rawMaterial, _produce._mineConveyorPath, Vector3.one * 1.75f, 
+                CurrentMine.Instance._activeMine.transform);
         }
     }
 }

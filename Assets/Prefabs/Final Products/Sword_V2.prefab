@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 1470829374459522096}
   - component: {fileID: 1277149986587632373}
   - component: {fileID: -6308565926237801359}
+  - component: {fileID: -7622054098576283037}
+  - component: {fileID: 1633830274172943594}
   m_Layer: 0
   m_Name: Sword_V2
   m_TagString: Untagged
@@ -231,4 +233,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c01f44cca28f9d429055c989811d563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _forgedType: 1
+  _itemType: 1
+--- !u!114 &-7622054098576283037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110581466878774757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f49f275e6e52e544a4bef2a59cd9bdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1633830274172943594
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110581466878774757}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.20759957, y: 1.0935677, z: 0.07287318}
+  m_Center: {x: 0.008760489, y: 0.044388782, z: -0.00000004421512}

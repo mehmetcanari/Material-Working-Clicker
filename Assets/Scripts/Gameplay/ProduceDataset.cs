@@ -4,12 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Dreamteck.Splines;
 using DG.Tweening;
-using UnityEngine.Events;
 
 public abstract class ProduceDataset : MonoBehaviour
 {
-    protected UnityEvent<GameObject, Vector3, SplineComputer> TaskCalling = new UnityEvent<GameObject, Vector3, SplineComputer>();
-    
     protected Vector3 ConveyorStartPosition(SplineComputer _targetPath)
     {
         Vector3 startPosition = _targetPath.transform.TransformPoint(_targetPath.EvaluatePosition(0f));
@@ -29,8 +26,10 @@ public abstract class ProduceDataset : MonoBehaviour
         });
     }
     
-    protected void ProduceTargetItem(GameObject _definedItem , SplineComputer _targetComputer)
+    protected void ProduceTargetItem(GameObject _definedItem , SplineComputer _targetComputer, Vector3 _tweenValue,Transform _targetTweenObject)
     {
+        Tweening(_tweenValue, _targetTweenObject);
+        
         var spawnedItem = Instantiate(_definedItem, ConveyorStartPosition(_targetComputer), Quaternion.identity);
 
         Vector3 defaultItemScale = spawnedItem.transform.localScale;
