@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 using DG.Tweening;
 using TMPro;
@@ -9,13 +10,15 @@ using Button = UnityEngine.UI.Button;
 
 public abstract class Upgradables : MonoBehaviour
 {
+    private int _frameIterator;
+
     public abstract void Pickaxe();
 
     public abstract void Mine();
 
     public abstract void Market();
 
-    public void TweenUpgraded(Vector3 _tweenValue, Transform _targetObject)
+    protected void TweenUpgraded(Vector3 _tweenValue, Transform _targetObject)
     {
         DOTween.Kill("Complete");
         Vector3 _defaultScale = _targetObject.transform.localScale;
@@ -42,3 +45,5 @@ public abstract class Upgradables : MonoBehaviour
         }
     }
 }
+
+

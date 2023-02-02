@@ -7,6 +7,7 @@ public class MarketSelling : Sell, ISeller
 {
     public Currency _currency;
     public MarketLevel _marketLevel;
+    public GameObject _market;
     
     public void SellableV1()
     {
